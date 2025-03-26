@@ -1,0 +1,58 @@
+<div class="forecast-container max-w-4xl mx-auto p-5 bg-gradient-to-br from-blue-900 to-blue-700 text-white rounded-lg shadow-lg">
+    <h2 class="text-2xl font-bold text-center text-yellow-300 mb-4">Weather Forecast</h2>
+  
+    <!-- 🌤️ Current Weather -->
+    <div class="current-weather bg-white/20 p-5 rounded-lg shadow-md text-center mb-5">
+      <h3 class="text-xl font-bold text-yellow-400 mb-3">Current Weather</h3>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+        <p>🌡️ Temperature: {{ nowcast()?.temperature }}°C</p>
+        <p>💧 Humidity: {{ nowcast()?.humidity }}%</p>
+        <p>🌞 Time of Day: {{ nowcast()?.isDay }}</p>
+        <p>☔ Precipitation: {{ nowcast()?.precipitation }} mm</p>
+        <p>🌍 Weather: {{ nowcast()?.weathercode }}</p>
+        <p>💨 Wind Speed: {{ nowcast()?.windSpeed }} km/h</p>
+        <p>🧭 Wind Direction: {{ nowcast()?.windDirection }}</p>
+        <p>🌬️ Wind Gusts: {{ nowcast()?.windGusts }} km/h</p>
+        <p>🌧️ Rain: {{ nowcast()?.rain }} mm</p>
+      </div>
+    </div>
+  
+<!-- Hourly Forecast -->
+<div class="hourly-weather bg-white/15 p-4 rounded-lg shadow-md mb-5">
+    <h3 class="text-lg font-bold text-center text-blue-300 mb-2">🕒 Hourly Forecast</h3>
+    
+    <!-- ✅ This div enables horizontal scrolling -->
+    <div class="hourly-list flex gap-3 p-2 overflow-x-auto whitespace-nowrap">
+      
+      <!-- ✅ Individual hourly item (scrollable inside parent) -->
+      <div class="hourly-item bg-white/30 p-3 rounded-lg shadow-md text-center min-w-[180px]" 
+           *ngFor="let hour of hourlyForecast()">
+        <p class="text-sm font-semibold">🕒 {{ hour.time }}</p>
+        <p>🌡️ {{ hour.temperature }}°C</p>
+        <p>💧 {{ hour.humidity }}%</p>
+        <p>☔ {{ hour.precipitation }} mm</p>
+        <p>🌤️ {{ hour.weatherCode }}</p>
+        <p>💨 {{ hour.windSpeed }} km/h</p>
+        <p>🌬️ {{ hour.windGusts }} km/h</p>
+      </div>
+  
+    </div>
+  </div>
+  
+  
+    <!-- 📆 14-Day Forecast (Grid Layout) -->
+    <div class="daily-weather bg-white/20 p-4 rounded-lg shadow-md">
+      <h3 class="text-lg font-bold text-center text-green-300 mb-2">📅 14-Day Forecast</h3>
+      <div class="daily-list grid grid-cols-2 md:grid-cols-4 gap-3 p-2">
+        <div class="daily-item bg-white/30 p-3 rounded-lg shadow-md text-center" 
+             *ngFor="let day of forecast()">
+          <p class="text-sm font-semibold">📆 {{ day.date }}</p>
+          <p>🌡️ Max: {{ day.maxTemp }}°C | Min: {{ day.minTemp }}°C</p>
+          <p>☔ {{ day.precipitation }} mm</p>
+          <p>🌤️ {{ day.weatherCode }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+<app-map></app-map>
+  

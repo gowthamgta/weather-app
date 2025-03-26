@@ -1,0 +1,19 @@
+.navbar{
+    width: 100%;
+}
+
+:root {
+    --mat-sys-surface-variant: #ffffff !important;
+}
+::ng-deep .mdc-notched-outline > * {
+    border-color: green !important;
+  }
+  
+  ::ng-deep .mdc-text-field--focused .mdc-notched-outline > * {
+    border-color: darkorange !important;
+  }
+  
+  ::ng-deep .mdc-text-field--invalid .mdc-notched-outline > * {
+    border-color: cyan !important;
+  }
+  

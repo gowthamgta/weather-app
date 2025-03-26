@@ -1,0 +1,107 @@
+.forecast-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background: linear-gradient(135deg, #2193b0, #6dd5ed);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  
+    h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  
+    .current-weather,
+    .hourly-weather,
+    .daily-weather {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 15px;
+      margin-top: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  
+      h3 {
+        font-size: 22px;
+        margin-bottom: 10px;
+        color: #ffeb3b;
+      }
+  
+      p {
+        font-size: 18px;
+        margin: 5px 0;
+      }
+    }
+  
+    /* ✅ Fix for Hourly List (Horizontal Scroll) */
+    .hourly-list {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: flex-start; /* Aligns items to the left */
+      gap: 10px;
+      overflow-x: auto; /* Enables smooth horizontal scrolling */
+      padding-bottom: 10px;
+      scrollbar-width: thin; /* Firefox scrollbar */
+      scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
+    }
+  
+    /* ✅ Styling for Individual Items */
+    .hourly-list div,
+    .daily-list div {
+      background: rgba(255, 255, 255, 0.3);
+      padding: 10px;
+      border-radius: 6px;
+      min-width: 180px; /* Ensures proper size for horizontal scrolling */
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s ease-in-out;
+  
+      &:hover {
+        transform: scale(1.05);
+        background: rgba(255, 255, 255, 0.4);
+      }
+  
+      p {
+        font-size: 16px;
+        margin: 3px 0;
+      }
+    }
+  
+    /* ✅ Improved Grid Layout for Daily Forecast */
+    .daily-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 10px;
+      justify-content: center;
+      padding-top: 10px;
+    }
+  }
+  
+  /* ✅ Responsive Design */
+  @media (max-width: 768px) {
+    .forecast-container {
+      padding: 15px;
+    }
+  
+    /* ✅ Mobile Optimization */
+    .hourly-list {
+      justify-content: flex-start; /* Ensures smooth horizontal scrolling */
+    }
+  
+    .daily-list {
+      grid-template-columns: repeat(2, minmax(100px, 1fr)); /* Adjusts for smaller screens */
+    }
+  }
+  .map-container {
+    width: 100%;
+    height: 500px;
+  }
+  
+  #map {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+  }
