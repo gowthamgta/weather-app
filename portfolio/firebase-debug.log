@@ -1,0 +1,64 @@
+[debug] [2025-03-27T03:46:00.335Z] ----------------------------------------------------------------------
+[debug] [2025-03-27T03:46:00.337Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\devou\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2025-03-27T03:46:00.338Z] CLI Version:   13.35.1
+[debug] [2025-03-27T03:46:00.338Z] Platform:      win32
+[debug] [2025-03-27T03:46:00.338Z] Node Version:  v22.14.0
+[debug] [2025-03-27T03:46:00.338Z] Time:          Thu Mar 27 2025 09:16:00 GMT+0530 (India Standard Time)
+[debug] [2025-03-27T03:46:00.338Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-03-27T03:46:00.342Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-03-27T03:46:00.343Z] > authorizing via signed-in user (gotamgsat@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\projects\portfolio
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2025-03-27T03:46:27.378Z] Checked if tokens are valid: false, expires at: 1742989901827
+[debug] [2025-03-27T03:46:27.378Z] Checked if tokens are valid: false, expires at: 1742989901827
+[debug] [2025-03-27T03:46:27.378Z] > refreshing access token with scopes: []
+[debug] [2025-03-27T03:46:27.380Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-03-27T03:46:27.380Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-03-27T03:46:27.599Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-03-27T03:46:27.599Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-03-27T03:46:27.617Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2025-03-27T03:46:28.141Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2025-03-27T03:46:28.142Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project newagent-vvlufp (NewAgent) 
+[info] 
+=== Dataconnect Setup
+[debug] [2025-03-27T03:46:31.446Z] Checked if tokens are valid: true, expires at: 1743050786599
+[debug] [2025-03-27T03:46:31.446Z] Checked if tokens are valid: true, expires at: 1743050786599
+[debug] [2025-03-27T03:46:31.446Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/newagent-vvlufp/billingInfo [none]
+[debug] [2025-03-27T03:46:31.900Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/newagent-vvlufp/billingInfo 200
+[debug] [2025-03-27T03:46:31.900Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/newagent-vvlufp/billingInfo {"name":"projects/newagent-vvlufp/billingInfo","projectId":"newagent-vvlufp","billingAccountName":"","billingEnabled":false}
+[info] i  dataconnect: ensuring required API sqladmin.googleapis.com is enabled... 
+[debug] [2025-03-27T03:46:31.902Z] Checked if tokens are valid: true, expires at: 1743050786599
+[debug] [2025-03-27T03:46:31.902Z] Checked if tokens are valid: true, expires at: 1743050786599
+[debug] [2025-03-27T03:46:31.902Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/newagent-vvlufp/services/sqladmin.googleapis.com [none]
+[debug] [2025-03-27T03:46:31.902Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/newagent-vvlufp/services/sqladmin.googleapis.com x-goog-quota-user=projects/newagent-vvlufp
+[debug] [2025-03-27T03:46:33.550Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/newagent-vvlufp/services/sqladmin.googleapis.com 200
+[debug] [2025-03-27T03:46:33.550Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/newagent-vvlufp/services/sqladmin.googleapis.com [omitted]
+[info] +  dataconnect: required API sqladmin.googleapis.com is enabled 
+[info] +  Wrote dataconnect\dataconnect.yaml 
+[info] +  Wrote dataconnect\schema\schema.gql 
+[info] +  Wrote dataconnect\connector\connector.yaml 
+[info] +  Wrote dataconnect\connector\queries.gql 
+[info] +  Wrote dataconnect\connector\mutations.gql 
+[info] +  Detected WEB app in directory C:\projects\portfolio 
