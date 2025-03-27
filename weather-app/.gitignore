@@ -6,7 +6,6 @@
 /out-tsc
 /bazel-out
 /node_modules
-/dist
 
 # Node
 /node_modules
