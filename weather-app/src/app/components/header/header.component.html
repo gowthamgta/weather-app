@@ -1,32 +1,33 @@
-<div class="navbar flex w-full flex-row justify-between items-center p-4 shadow-md">
-    <!-- Left: Header -->
-    <div class="text-xl font-bold">Weather Real Time</div>
+<div class="navbar flex w-full flex-row items-center p-4 shadow-md bg-white">
+  <!-- Left: Header -->
+  <div class="text-xl font-bold text-blue-600 flex-1">Weather Real Time</div>
 
-    <!-- Center: Search Box -->
-    <div class="flex-1 flex justify-center">
-        <mat-form-field class="search-box w-64">
-            <input 
-              type="text"
-              placeholder="Search Places"
-              matInput
-              [formControl]="searchControl"
-              [matAutocomplete]="auto2">
-              
-            <mat-autocomplete #auto2="matAutocomplete" (optionSelected)="onCitySelected($event)"  [displayWith]="displayFn">
-              <mat-option *ngFor="let city of filteredCities()" [value]="city">
-                {{ city.name }} ({{ city.country }})
-              </mat-option>
-            </mat-autocomplete>
-          </mat-form-field>
-              <!-- Get Location Button -->
-              <button mat-icon-button class="ml-2 bg-blue-600 text-white p-2 rounded" (click)="getLocation()">
-                <mat-icon>my_location</mat-icon>
-            </button>
-    </div>
+  <!-- Center: Search Box & Location Button -->
+  <div class="flex flex-1 justify-center items-center gap-x-4">
+      <mat-form-field class="search-box w-64">
+          <input 
+            type="text"
+            placeholder="Search Places"
+            matInput
+            [formControl]="searchControl"
+            [matAutocomplete]="auto2">
+            
+          <mat-autocomplete #auto2="matAutocomplete" (optionSelected)="onCitySelected($event)"  [displayWith]="displayFn">
+            <mat-option *ngFor="let city of filteredCities()" [value]="city">
+              {{ city.name }} ({{city.state}} {{ city.country }})
+            </mat-option>
+          </mat-autocomplete>
+      </mat-form-field>
 
-    <!-- Right: Buttons -->
-    <div class="flex gap-4">
-        <button mat-button class="text-blue-600 hover:underline">Home</button>
-        <button mat-button class="text-blue-600 hover:underline">About</button>
-    </div>
+      <!-- Get Location Button -->
+      <button mat-icon-button class="bg-blue-600 text-white p-2 rounded" (click)="getLocation()">
+          <mat-icon>my_location</mat-icon>
+      </button>
+  </div>
+
+  <!-- Right: Home & About Buttons -->
+  <div class="flex flex-1 justify-end gap-x-4">
+      <button mat-button class="text-blue-600 hover:underline">Home</button>
+      <button mat-button class="text-blue-600 hover:underline">About</button>
+  </div>
 </div>

@@ -13,6 +13,7 @@ import { WeatherService } from '../../services/weather.service';
 interface City {
   name: string;
   country: string;
+  state: string;
   lat: string;
   lon: string;
 }
@@ -66,6 +67,7 @@ export class HeaderComponent {
       const cityData: City[] = response.map(city => ({
         name: city.name,
         country: city.country,
+        state: city.state,
         lat: city.lat,
         lon: city.lon
       }));
