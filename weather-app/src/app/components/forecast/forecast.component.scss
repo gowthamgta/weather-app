@@ -2,7 +2,7 @@
     max-width: 100%;
     margin: 0 auto;
     padding: 20px;
-    background: linear-gradient(135deg, #2193b0, #6dd5ed);
+    background: linear-gradient(135deg, #575b5c, #30393b);
     color: white;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -18,11 +18,11 @@
     .current-weather,
     .hourly-weather,
     .daily-weather {
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(125, 123, 123, 0.6);
       padding: 15px;
       margin-top: 15px;
       border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 2px 5px rgb(122, 119, 119);
   
       h3 {
         font-size: 22px;
@@ -57,7 +57,7 @@
       min-width: 180px; /* Ensures proper size for horizontal scrolling */
       text-align: center;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-      transition: transform 0.2s ease-in-out;
+      transition: transform 1s ease-in-out;
   
       &:hover {
         transform: scale(1.05);

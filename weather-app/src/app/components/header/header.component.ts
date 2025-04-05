@@ -41,7 +41,7 @@ export class HeaderComponent {
   searchControl = new FormControl('');
 
   APIKEY = `1a44de2e60505e138ac76a85d650dafa`; // OpenWeather API Key
-  APIURL = `http://api.openweathermap.org/geo/1.0/direct?q=`;
+  APIURL = `https://api.locationiq.com/v1/autocomplete?key=pk.b9f42d3741f1de1c310da98d186281a9&limit=5&dedupe=1&&q=`;
 
   cities = signal<City[]>([]);
   filteredCities = signal<City[]>([]);
@@ -60,14 +60,14 @@ export class HeaderComponent {
 
   fetchCities(searchText: string) {
     if (!searchText.trim()) return;
-
-    const cityUrl = `${this.APIURL}${searchText}&limit=5&appid=${this.APIKEY}`;
+    
+    const cityUrl = `${this.APIURL}${searchText}`;
 
     this.http.get<any[]>(cityUrl).subscribe(response => {
       const cityData: City[] = response.map(city => ({
-        name: city.name,
-        country: city.country,
-        state: city.state,
+        name: city.address.name,
+        country: city.address.country,
+        state: city.address.state,
         lat: city.lat,
         lon: city.lon
       }));

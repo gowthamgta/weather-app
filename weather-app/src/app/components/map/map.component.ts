@@ -18,6 +18,7 @@ export class MapComponent implements AfterViewInit {
       const weatherData = this.weatherService.weatherData();
       if (weatherData) {
         this.mapCords.set(weatherData);
+        console.log(this.mapCords)
         this.initMap();
       }
     });
@@ -37,11 +38,11 @@ export class MapComponent implements AfterViewInit {
   
     console.log(this.mapCords());
   
-    let lat = this.mapCords()?.latitude ?? 12.9716;
-    let lon = this.mapCords()?.longitude ?? 77.5946;
+    let lat = this.mapCords()?.latitude;
+    let lon = this.mapCords()?.longitude;
   
     if (this.map) {
-      this.map.setView([lat, lon], 10);
+      this.map.setView([lat, lon], 20);
     } else {
       this.map = L.map('map').setView([lat, lon], 10);
   
